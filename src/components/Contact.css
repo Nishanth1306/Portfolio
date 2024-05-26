@@ -1,0 +1,26 @@
+#contact {
+    padding: 4em 2em;
+    text-align: center;
+    background: #f4f4f4;
+  }
+  
+  .contact-details {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.2em;
+  }
+  
+  .contact-details p {
+    margin: 1em 0;
+  }
+  
+  .contact-details a {
+    color: #0073b1; /* LinkedIn blue color */
+    text-decoration: none;
+  }
+  
+  .contact-details a:hover {
+    text-decoration: underline;
+  }
+  

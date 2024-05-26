@@ -1,0 +1,138 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5em;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+header {
+  background: #444;
+  color: #fff;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 1em;
+}
+
+nav ul li a {
+  padding: 0.5em 1em;
+  transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: #555;
+  border-radius: 5px;
+}
+
+section {
+  padding: 6em 0 4em;
+  text-align: center;
+}
+
+#welcome-text {
+  background: url('../assets/background.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 15em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcome-text h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+#welcome-text p {
+  font-size: 1.5em;
+}
+
+#about, #portfolio, #contact {
+  background: #f9f9f9;
+  padding: 4em 2em;
+}
+
+.portfolio-item {
+  display: inline-block;
+  width: 45%;
+  margin: 2%;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin: 1em 0 0.5em;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.75em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 0.75em 2em;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #555;
+}
+
+footer {
+  background: #444;
+  color: #fff;
+  padding: 1em 0;
+  text-align: center;
+}
