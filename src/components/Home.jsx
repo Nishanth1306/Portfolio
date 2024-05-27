@@ -69,7 +69,10 @@ const Home = () => {
         <div className="projects-list">
           <div className="project-item">
             <h3>Smart Street Light</h3>
-            <p>These lights are designed to illuminate based on the condition of the atmosphere, to reduce the loss of electricity, and to maintain the efficiency of the streetlight.</p>
+            <p>The Smart Street Light System is an innovative solution designed to enhance energy efficiency and safety in urban environments.</p><p> By integrating temperature and light intensity sensors, the system ensures optimal street lighting while conserving energy.</p><p>
+<strong>Temperature Sensors:</strong> Monitor ambient temperature to adjust the lighting levels.</p>
+<p><strong>Light Intensity Sensors:</strong> Detect the level of natural light to control the street lights accordingly.</p>
+<p><strong>Automatic Dimming and Brightening:</strong> Based on sensor data, the lights automatically dim or brighten, ensuring energy is used only when necessary.</p>
           </div>
           <div className="project-item">
             <h3>Smart Pole</h3>
