@@ -149,7 +149,7 @@
 }
 
 
-/* Media Queries for Responsive Design */
+
 @media only screen and (max-width: 768px) {
   .hero-text h1 {
     font-size: 2em;
