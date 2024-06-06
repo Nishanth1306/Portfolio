@@ -1,4 +1,3 @@
-/* Common styles for all screen sizes */
 #home {
   font-family: 'Poppins', sans-serif;
 }
@@ -66,17 +65,10 @@
   margin: 1em;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1 1 calc(33.33% - 2em); /* Adjust based on your layout */
+  flex: 1 1 calc(33.33% - 2em); 
   background: rgba(240, 224, 224, 0.8); 
   color: black; 
 }
-
-/* .skill {
-  width: 100%; 
-  height: auto; 
-  border-radius: 5px;
-} */
-
 .skill span {
   position: absolute;
   bottom: 10px; 
@@ -86,7 +78,6 @@
   font-size: 1em;
 }
 
-/* About Me Section */
 .about-me-section{
   font-family: 'Times New Roman', Times, serif;
   font-size: large;
@@ -98,7 +89,7 @@
   color: rgb(255, 255, 255);
 }
 
-/* Projects Section */
+
 .projects-overview {
   padding: 4em 2em;
   text-align: center;
@@ -221,5 +212,41 @@
   .skill,
   .project-item {
     flex: 1 1 calc(100% - 1em);
+  }
+}
+.nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  margin: 0 1em;
+}
+
+.nav ul li a {
+  color: #fff;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav ul li a:hover {
+  background-color: #555;
+  border-radius: 5px;
+  color: #ddd;
+}
+
+
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav ul li {
+    margin: 0.5em 0;
   }
 }
