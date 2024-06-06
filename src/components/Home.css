@@ -199,3 +199,27 @@
     flex: 1 1 calc(100% - 2em);
   }
 }
+
+@media only screen and (max-width: 320px) {
+  .hero-section {
+    padding: 6em 0;
+  }
+
+  .hero-text h1 {
+    font-size: 1.2em;
+  }
+
+  .hero-text p {
+    font-size: 0.6em;
+  }
+
+  .profile-picture {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill,
+  .project-item {
+    flex: 1 1 calc(100% - 1em);
+  }
+}

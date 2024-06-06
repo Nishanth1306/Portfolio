@@ -1,26 +1,40 @@
 #contact {
-    padding: 4em 2em;
-    text-align: center;
-    background: #f4f4f4;
+  padding: 4em 2em;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.contact-details {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.2em;
+}
+
+.contact-details p {
+  margin: 1em 0;
+}
+
+.contact-details a {
+  color: #0073b1; /* LinkedIn blue color */
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  #contact {
+      padding: 2em 1em;
   }
-  
+
   .contact-details {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 1.2em;
+      font-size: 1em;
   }
-  
+
   .contact-details p {
-    margin: 1em 0;
+      margin: 0.5em 0;
   }
-  
-  .contact-details a {
-    color: #0073b1; /* LinkedIn blue color */
-    text-decoration: none;
-  }
-  
-  .contact-details a:hover {
-    text-decoration: underline;
-  }
-  
+}
