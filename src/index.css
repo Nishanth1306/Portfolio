@@ -137,7 +137,6 @@ footer {
   text-align: center;
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -146,6 +145,12 @@ footer {
 
   nav ul li {
     margin: 0.5em 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    text-align: center;
+    padding: 0.75em 0;
   }
 
   #welcome-text {
@@ -170,14 +175,16 @@ footer {
   }
 }
 
-/* Media query for extra small screens */
+
 @media (max-width: 480px) {
   header {
     padding: 0.5em 0;
   }
 
   nav ul li a {
-    padding: 0.5em;
+    padding: 0.75em 0;
+    width: 100%;
+    text-align: center;
   }
 
   #welcome-text h1 {

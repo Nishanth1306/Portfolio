@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
+import Project from './components/project';
+
 import './App.css';
 
 const App = () => {
@@ -10,7 +12,10 @@ const App = () => {
     <div>
       <Header />
       <Home />
-      <About/>
+      
+      <Project/>
+      <About />
+      
       <Contact />
       
     </div>
