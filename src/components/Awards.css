@@ -1,0 +1,30 @@
+.awards-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .awards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .award-item {
+    width: 300px;
+    text-align: center;
+  }
+  
+  .award-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 10px;
+  }
+  
+  .award-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
