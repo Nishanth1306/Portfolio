@@ -69,7 +69,7 @@ const Home = () => {
       <div className="resume-section">
         <h2>Resume</h2>
         <p>You can view or download my resume as a PDF file:</p>
-        <a href="https://drive.google.com/file/d/1G0A_9IDQ1bj6LpaOMvIsw0vKQ6X8Pl35/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="cta-button">View Resume</a>
+        <a href="https://drive.google.com/file/d/1U_gw1VPnNX2qUJbP15SHSADQtEKbqcy1/view" target="_blank" rel="noopener noreferrer" className="cta-button">View Resume</a>
       </div>
     </section>
   );
