@@ -70,9 +70,15 @@
 }
 
 .typing-text {
-  border-right: 3px solid #f093fb;
+  color: white;
+  font-weight: 500;
+}
+
+.typing-cursor {
+  color: #f093fb;
+  font-weight: bold;
   animation: blink 1s infinite;
-  padding-right: 5px;
+  margin-left: 2px;
 }
 
 .hero-description {
@@ -298,6 +304,18 @@
   filter: brightness(0) invert(1);
 }
 
+/* Text-based skill icons */
+.skill-icon-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.skill-card:hover .skill-icon-text {
+  color: white;
+}
+
 .skill-name {
   font-size: 1.25rem;
   font-weight: 600;
@@ -337,10 +355,10 @@
 
 @keyframes blink {
   0%, 50% {
-    border-color: transparent;
+    opacity: 1;
   }
   51%, 100% {
-    border-color: #f093fb;
+    opacity: 0;
   }
 }
 

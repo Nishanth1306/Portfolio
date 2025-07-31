@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faDownload, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -15,6 +15,9 @@ import leadershipLogo from '../assets/leadership.png';
 const Home = () => {
   const heroRef = useRef(null);
   const skillsRef = useRef(null);
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const fullText = "A Passionate Software Developer";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,6 +36,18 @@ const Home = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Typing animation effect
+  useEffect(() => {
+    if (currentIndex < fullText.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + fullText[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 100); // Speed of typing
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, fullText]);
 
   return (
     <div className="home-container">
@@ -56,7 +71,8 @@ const Home = () => {
               </h1>
               
               <p className="hero-subtitle">
-                A passionate <span className="typing-text">Developer</span>
+                <span className="typing-text">{displayText}</span>
+                <span className="typing-cursor">|</span>
               </p>
               
               <p className="hero-description">
@@ -159,6 +175,38 @@ const Home = () => {
               </div>
               <h3 className="skill-name">SQL</h3>
               <p className="skill-description">Database design and management</p>
+            </div>
+            
+            <div className="skill-card animate-on-scroll">
+              <div className="skill-icon-wrapper">
+                <div className="skill-icon-text">Go</div>
+              </div>
+              <h3 className="skill-name">Go</h3>
+              <p className="skill-description">High-performance systems and microservices development</p>
+            </div>
+            
+            <div className="skill-card animate-on-scroll">
+              <div className="skill-icon-wrapper">
+                <div className="skill-icon-text">FastAPI</div>
+              </div>
+              <h3 className="skill-name">FastAPI</h3>
+              <p className="skill-description">Modern, fast web APIs with automatic documentation</p>
+            </div>
+            
+            <div className="skill-card animate-on-scroll">
+              <div className="skill-icon-wrapper">
+                <div className="skill-icon-text">DevOps</div>
+              </div>
+              <h3 className="skill-name">DevOps</h3>
+              <p className="skill-description">CI/CD pipelines, containerization, and cloud deployment</p>
+            </div>
+            
+            <div className="skill-card animate-on-scroll">
+              <div className="skill-icon-wrapper">
+                <div className="skill-icon-text">Selenium</div>
+              </div>
+              <h3 className="skill-name">Selenium</h3>
+              <p className="skill-description">Web automation and testing frameworks</p>
             </div>
             
             <div className="skill-card animate-on-scroll">
