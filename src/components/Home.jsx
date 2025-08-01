@@ -15,9 +15,31 @@ import leadershipLogo from '../assets/leadership.png';
 const Home = () => {
   const heroRef = useRef(null);
   const skillsRef = useRef(null);
+  const fullText = "A Passionate Software Developer";
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fullText = "A Passionate Software Developer";
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  // Typing animation effect (running/looping)
+  useEffect(() => {
+    let timeout;
+    if (!isDeleting && currentIndex < fullText.length) {
+      timeout = setTimeout(() => {
+        setDisplayText(prev => prev + fullText[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 100);
+    } else if (!isDeleting && currentIndex === fullText.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 1200); // Pause before deleting
+    } else if (isDeleting && currentIndex > 0) {
+      timeout = setTimeout(() => {
+        setDisplayText(prev => prev.slice(0, -1));
+        setCurrentIndex(prev => prev - 1);
+      }, 50);
+    } else if (isDeleting && currentIndex === 0) {
+      timeout = setTimeout(() => setIsDeleting(false), 400); // Pause before typing again
+    }
+    return () => clearTimeout(timeout);
+  }, [currentIndex, isDeleting, fullText]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,18 +58,6 @@ const Home = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  // Typing animation effect
-  useEffect(() => {
-    if (currentIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, 100); // Speed of typing
-
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, fullText]);
 
   return (
     <div className="home-container">
