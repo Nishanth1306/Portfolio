@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import './Project.css';
 
 export default function Project() {
   const projects = [
@@ -89,52 +88,74 @@ export default function Project() {
   ];
 
   return (
-    <section id="projects" className="projects-section section">
-      <div className="container">
-        <h2 className="section-title animate-on-scroll">Featured Projects</h2>
-        <p className="section-subtitle animate-on-scroll">
-          Explore my latest work and innovative solutions across various domains
-        </p>
-        
-        <div className="projects-grid">
+    <section id="projects" className="py-20 px-4 bg-gradient-to-br from-white via-slate-50 to-slate-100">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Featured Projects</h2>
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">Explore my latest work and innovative solutions across various domains</p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <div 
-              key={project.id} 
-              className={`project-card animate-on-scroll`}
+            <div
+              key={project.id}
+              className="group relative rounded-2xl bg-white/90 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="project-header">
-                <div className="project-category">{project.category}</div>
-                <h3 className="project-title">{project.title}</h3>
-              </div>
-              
-              <p className="project-description">{project.description}</p>
-              
-              <div className="project-features">
-                <h4>Key Features:</h4>
-                <ul>
-                  {project.features.map((feature, idx) => (
-                    <li key={idx}>{feature}</li>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100">
+                    {project.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 leading-snug">
+                  {project.title}
+                </h3>
+                <p className="mt-3 text-gray-600 text-sm leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="mt-5">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Features</h4>
+                  <ul className="space-y-1.5 list-disc list-inside text-gray-600 text-sm">
+                    {project.features.map((feature, idx) => (
+                      <li key={idx}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="inline-flex items-center px-2.5 py-1 text-xs font-semibold rounded-full bg-slate-100 text-slate-700 border border-slate-200"
+                    >
+                      {tech}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
-              
-              <div className="project-technologies">
-                {project.technologies.map((tech, idx) => (
-                  <span key={idx} className="tech-tag">{tech}</span>
-                ))}
+
+              <div className="mt-auto px-6 pb-6">
+                <div className="grid grid-cols-2 gap-3">
+                  <a
+                    href="#"
+                    className="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold rounded-lg border border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100 transition"
+                  >
+                    <FontAwesomeIcon icon={faExternalLinkAlt} className="h-4 w-4" />
+                    View Details
+                  </a>
+                  <a
+                    href="#"
+                    className="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold rounded-lg text-white bg-gradient-to-r from-indigo-600 to-pink-600 shadow hover:shadow-lg transition"
+                  >
+                    <FontAwesomeIcon icon={faGithub} className="h-4 w-4" />
+                    Source Code
+                  </a>
+                </div>
               </div>
-              
-              <div className="project-actions">
-                <button className="btn btn-secondary">
-                  <FontAwesomeIcon icon={faExternalLinkAlt} className="btn-icon" />
-                  View Details
-                </button>
-                <button className="btn btn-primary">
-                  <FontAwesomeIcon icon={faGithub} className="btn-icon" />
-                  Source Code
-                </button>
-              </div>
+
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition" />
             </div>
           ))}
         </div>
