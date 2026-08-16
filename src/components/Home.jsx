@@ -1,12 +1,6 @@
-import { useEffect } from 'react';
-import LazyOnVisible from './LazyOnVisible';
-
-const loadSkills = () => import('./Skills');
+import Skills from './Skills';
 
 export default function Home() {
-  useEffect(() => {
-    document.getElementById('fcp-shell')?.remove();
-  }, []);
   return (
     <div>
       <section id="home" className="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 py-24">
@@ -94,7 +88,7 @@ export default function Home() {
         </div>
       </section>
 
-      <LazyOnVisible loader={loadSkills} />
+      <Skills />
     </div>
   );
 }

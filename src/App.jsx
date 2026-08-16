@@ -1,11 +1,10 @@
 import Header from './components/Header';
 import Home from './components/Home';
-import LazyOnVisible from './components/LazyOnVisible';
-
-const loadProject = () => import('./components/project');
-const loadAbout = () => import('./components/About');
-const loadAwards = () => import('./components/Awards');
-const loadContact = () => import('./components/Contact');
+import Contact from './components/Contact';
+import About from './components/About';
+import Project from './components/project';
+import Awards from './components/Awards';
+import './App.css';
 
 const App = () => {
   return (
@@ -13,10 +12,10 @@ const App = () => {
       <Header />
       <main>
         <Home />
-        <LazyOnVisible id="projects" loader={loadProject} />
-        <LazyOnVisible id="about" loader={loadAbout} />
-        <LazyOnVisible id="awards" loader={loadAwards} />
-        <LazyOnVisible id="contact" loader={loadContact} />
+        <Project />
+        <About />
+        <Awards />
+        <Contact />
       </main>
     </div>
   );
