@@ -2,7 +2,7 @@ export const featuredProjects = [
   {
     id: 1,
     title: 'FYERS public SEO stock pages',
-    org: 'Client · FYERS',
+    org: 'Codingmart · Client: FYERS',
     role: 'Frontend',
     description:
       'Server-rendered Next.js site for high-traffic equity research. Users can review overview, fundamentals, and corporate actions with crawlable metadata and interactive charts.',
@@ -18,7 +18,7 @@ export const featuredProjects = [
   {
     id: 2,
     title: 'FYERS SEO content CMS',
-    org: 'Client · FYERS',
+    org: 'Codingmart · Client: FYERS',
     role: 'Frontend',
     description:
       'React and TypeScript dashboard used by the client’s marketing and SEO teams to draft, approve, and publish finance content, including AI generation and live SEO monitoring.',
@@ -34,7 +34,7 @@ export const featuredProjects = [
   {
     id: 3,
     title: 'FYERS SEO operations API',
-    org: 'Client · FYERS',
+    org: 'Codingmart · Client: FYERS',
     role: 'Backend',
     description:
       'FastAPI platform behind the client’s SEO operations: AI-assisted content, sitemap compilation, Lighthouse monitoring, JWT auth, and background jobs on MongoDB, Redis, and Celery.',
@@ -51,7 +51,7 @@ export const featuredProjects = [
   {
     id: 4,
     title: 'Hala Mobility growth & payouts',
-    org: 'Client · Hala Mobility',
+    org: 'Codingmart · Client: Hala Mobility',
     role: 'Backend',
     description:
       'API work for the client’s promotions, acquisition, and payouts. Built validated request/response flows and failure paths for features that affect discounts and money movement.',
@@ -66,6 +66,34 @@ export const featuredProjects = [
   },
 ];
 
+export const personalProjects = [
+  {
+    id: 8,
+    title: 'Event management application',
+    description:
+      'Web app for posting events, public registration, and seat reservation, with organizer vs participant roles and OTP confirmation after signup (Apr–Jul 2024).',
+    features: [
+      'Organizers create and edit events with seat inventory',
+      'Public browse, register, and reserve seats',
+      'OTP confirmation and role-based access',
+    ],
+    technologies: ['Web app', 'Auth', 'Role-based access'],
+    category: 'Personal',
+  },
+  {
+    id: 9,
+    title: 'Student database management',
+    description:
+      'MERN app for teachers to record and review student data and grades, with JWT auth, RBAC, MongoDB storage, and dashboards (Mar–May 2024).',
+    features: [
+      'JWT authentication and role-based permissions',
+      'Centralized student records in MongoDB',
+      'Dashboards for grade trends',
+    ],
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    category: 'Personal',
+  },
+];
 
 export const additionalProjects = [
   {

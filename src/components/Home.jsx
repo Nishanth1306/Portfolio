@@ -13,7 +13,7 @@ export default function Home() {
                 src="/profile-320.webp"
                 srcSet="/profile-320.webp 320w, /profile.webp 416w"
                 sizes="(max-width: 767px) 160px, 208px"
-                alt="Nishanth K, software engineer"
+                alt="Nishanth K, Software Engineer"
                 width={208}
                 height={208}
                 fetchPriority="high"
@@ -27,7 +27,10 @@ export default function Home() {
               {profile.name}
             </h1>
             <p className="mt-3 text-xl md:text-2xl text-gray-800 font-semibold">
-              {profile.headline} — client work on SEO platforms and APIs
+              {profile.headline} at {profile.employer}
+            </p>
+            <p className="mt-2 text-base text-gray-600">
+              React · React Native · Next.js · Node.js · FastAPI · Go · Docker · AWS
             </p>
             <p className="mt-4 max-w-2xl text-gray-600 leading-relaxed">
               {profile.summary}

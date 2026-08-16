@@ -1,4 +1,4 @@
-import { featuredProjects, additionalProjects } from '../data/projects';
+import { featuredProjects, additionalProjects, personalProjects } from '../data/projects';
 
 function ProjectCard({ project }) {
   return (
@@ -50,7 +50,7 @@ export default function Project() {
             Selected work
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Client projects first (FYERS and Hala Mobility). Source is private, so this is the scope I owned — not placeholder CRUD apps.
+            Client work at Codingmart for FYERS and Hala Mobility. Source is private. Personal and hardware projects are listed separately.
           </p>
         </div>
 
@@ -58,6 +58,18 @@ export default function Project() {
           {featuredProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
+        </div>
+
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-gray-900 text-center">Personal projects</h3>
+          <p className="mt-2 text-gray-600 text-center max-w-2xl mx-auto">
+            Independent web apps from 2024.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {personalProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
         </div>
 
         <div className="mt-16">

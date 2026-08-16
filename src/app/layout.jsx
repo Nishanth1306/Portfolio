@@ -44,6 +44,20 @@ const jsonLd = {
   '@type': 'Person',
   name: siteConfig.name,
   jobTitle: 'Software Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Codingmart Technologies',
+  },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Karpagam Institute of Technology',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Sathyamangalam',
+    addressRegion: 'Tamil Nadu',
+    addressCountry: 'IN',
+  },
   url: siteConfig.url,
   email: siteConfig.email,
   image: `${siteConfig.url}/profile.webp`,
