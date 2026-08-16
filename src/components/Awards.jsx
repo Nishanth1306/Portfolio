@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from 'next/image';
 import annaUniversity from '../assets/Anna-university.webp';
 import eCell from '../assets/E-cell.webp';
 import eSummit from '../assets/E-summit.webp';
@@ -46,13 +46,11 @@ export default function Awards() {
           {awards.map((award, index) => (
             <div key={award.id} className="group rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all">
               <div className="relative h-48 overflow-hidden">
-                <img
+                <Image
                   src={award.image}
                   alt={award.title}
                   width={800}
                   height={600}
-                  loading="lazy"
-                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>

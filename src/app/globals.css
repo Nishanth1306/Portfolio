@@ -1,10 +1,5 @@
 @import "tailwindcss";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@source "../**/*.{js,jsx}";
 
 :root {
   --primary-color: #667eea;
@@ -51,7 +46,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(118, 75, 162, 0.05) 0%, transparent 50%);
@@ -59,7 +54,6 @@ body::before {
   z-index: -1;
 }
 
-/* App Layout */
 .app {
   min-height: 100vh;
   display: flex;
@@ -69,17 +63,15 @@ body::before {
 
 main {
   flex: 1;
-  padding-top: 80px; /* Account for fixed header */
+  padding-top: 80px;
 }
 
-/* Modern Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* Enhanced Button Styles */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -141,7 +133,6 @@ main {
   box-shadow: var(--shadow-xl);
 }
 
-/* Enhanced Card Styles */
 .card {
   background: rgba(255, 255, 255, 0.95);
   border-radius: var(--border-radius-lg);
@@ -175,7 +166,6 @@ main {
   box-shadow: var(--shadow-2xl);
 }
 
-/* Enhanced Section Styles */
 .section {
   padding: 6rem 0;
   position: relative;
@@ -229,7 +219,6 @@ main {
   font-weight: 400;
 }
 
-/* Enhanced Animation Classes */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
@@ -269,7 +258,6 @@ main {
   }
 }
 
-/* Floating Animation */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -283,7 +271,6 @@ main {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Pulse Animation */
 @keyframes pulse-glow {
   0%, 100% {
     box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
@@ -293,24 +280,23 @@ main {
   }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
   }
-  
+
   .section {
     padding: 4rem 0;
   }
-  
+
   .section-title {
     font-size: 2.5rem;
   }
-  
+
   .card {
     padding: 2rem;
   }
-  
+
   main {
     padding-top: 70px;
   }
@@ -320,14 +306,13 @@ main {
   .section-title {
     font-size: 2rem;
   }
-  
+
   .btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
 }
 
-/* Enhanced Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -347,7 +332,6 @@ main {
   background: var(--bg-gradient-secondary);
 }
 
-/* Selection Styling */
 ::selection {
   background: var(--primary-color);
   color: white;

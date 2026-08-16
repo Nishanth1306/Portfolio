@@ -1,6 +1,6 @@
-import LazyOnVisible from './LazyOnVisible';
+import dynamic from 'next/dynamic';
 
-const loadSkills = () => import('./Skills');
+const Skills = dynamic(() => import('./Skills'));
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
                 alt="Nishanth.K"
                 width={208}
                 height={208}
-                fetchpriority="high"
+                fetchPriority="high"
                 loading="eager"
                 decoding="sync"
                 className="relative w-40 h-40 md:w-52 md:h-52 rounded-full ring-4 ring-white shadow-xl object-cover"
@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <LazyOnVisible loader={loadSkills} />
+      <Skills />
     </div>
   );
 }
