@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
+  { href: '#projects', label: 'Work' },
   { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#awards', label: 'Awards' },
+  { href: '#awards', label: 'Leadership' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -55,7 +55,7 @@ const Header = () => {
           <a
             href="#home"
             onClick={closeMenu}
-            className="relative z-10 font-extrabold text-xl tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
+            className="relative z-10 font-extrabold text-xl tracking-tight text-slate-900"
           >
             Nishanth.K
           </a>
@@ -73,12 +73,12 @@ const Header = () => {
             ))}
             <li>
               <a
-                href="https://www.linkedin.com/in/nishanth--k/"
+                href="/Nishanth.K.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-lg bg-gradient-to-r from-indigo-600 to-pink-600 text-white px-4 py-2 font-semibold shadow hover:shadow-lg transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center rounded-lg bg-indigo-700 text-white px-4 py-2 font-semibold hover:bg-indigo-800 transition"
               >
-                LinkedIn
+                Resume
               </a>
             </li>
           </ul>
@@ -128,13 +128,13 @@ const Header = () => {
           ))}
           <li className="pt-1">
             <a
-              href="https://www.linkedin.com/in/nishanth--k/"
+              href="/Nishanth.K.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
-              className="flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-600 to-pink-600 text-white px-4 py-3 font-semibold shadow"
+              className="flex items-center justify-center rounded-lg bg-indigo-700 text-white px-4 py-3 font-semibold"
             >
-              LinkedIn
+              Resume
             </a>
           </li>
         </ul>

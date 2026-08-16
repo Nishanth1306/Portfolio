@@ -35,7 +35,7 @@ export const metadata = {
     images: ['/profile.webp'],
   },
   icons: {
-    icon: '/vite.svg',
+    icon: '/profile-320.webp',
   },
 };
 
@@ -43,7 +43,21 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: siteConfig.name,
-  jobTitle: 'Software Developer',
+  jobTitle: 'Software Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Codingmart Technologies',
+  },
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Karpagam Institute of Technology',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bengaluru',
+    addressRegion: 'Karnataka',
+    addressCountry: 'IN',
+  },
   url: siteConfig.url,
   email: siteConfig.email,
   image: `${siteConfig.url}/profile.webp`,
