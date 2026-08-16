@@ -7,6 +7,47 @@ export default function Project() {
   const projects = [
     {
       id: 1,
+      title: "Marcom SEO Pages Frontend",
+      description: "Public FYERS SEO website built with Next.js for high-traffic stock pages. Delivers server-rendered financial content with metadata, sitemaps, analytics, and interactive charts so users can research equities across overview, fundamentals, and corporate actions.",
+      features: [
+        "SEO-optimized stock pages for overview, P&L, balance sheet, dividends, bonus, and results",
+        "Dynamic metadata, Open Graph tags, and XML sitemaps for search indexing",
+        "Interactive financial charts, peer comparison, and technical analysis views",
+        "FYERS site chrome, auth flows, and analytics via GTM and CleverTap"
+      ],
+      technologies: ["Next.js", "React", "Tailwind CSS", "Chart.js", "Recharts", "Axios"],
+      category: "Web App",
+      liveUrl: "https://fyers.in/stocks/"
+    },
+    {
+      id: 2,
+      title: "Fyers Frontend",
+      description: "React and TypeScript CMS used by FYERS marketing and SEO teams to create, approve, and publish finance content. Covers content workflows, AI generation, interlinking, sitemap editing, and real-time SEO monitoring in one dashboard.",
+      features: [
+        "Content and FAQ management with approval workflows",
+        "AI content generation, sync, and prompt configuration UI",
+        "SEO monitoring, alerts, and sitemap editor",
+        "Interlinking, cluster management, and role-based admin"
+      ],
+      technologies: ["React", "TypeScript", "Vite", "Redux Toolkit", "TanStack Query", "Tailwind CSS"],
+      category: "CMS"
+    },
+    {
+      id: 3,
+      title: "Fyers Backend",
+      description: "FastAPI content platform powering FYERS SEO operations. Provides AI-assisted content generation, sitemap compilation, Lighthouse-based monitoring, JWT auth, and background jobs over MongoDB, Redis, and Celery.",
+      features: [
+        "JWT authentication with role-based access control",
+        "AI content and FAQ generation via OpenAI and Anthropic",
+        "Automated sitemap generation, validation, and history tracking",
+        "SEO monitoring with Lighthouse, Playwright, and crawl-rate control",
+        "Interlinking, master data APIs, and Celery cron workers"
+      ],
+      technologies: ["FastAPI", "Python", "MongoDB", "Redis", "Celery", "OpenAI"],
+      category: "Backend"
+    },
+    {
+      id: 4,
       title: "Smart Street Light",
       description: "An innovative IoT solution designed to enhance energy efficiency and safety in urban environments. The system integrates temperature and light intensity sensors to ensure optimal street lighting while conserving energy.",
       features: [
@@ -19,7 +60,7 @@ export default function Project() {
       category: "IoT"
     },
     {
-      id: 2,
+      id: 5,
       title: "Smart Pole",
       description: "Next-generation street light model integrating various devices like WiFi modems, cameras, LED displays, and emergency SOS to improve public safety and provide comprehensive urban infrastructure.",
       features: [
@@ -32,7 +73,7 @@ export default function Project() {
       category: "Smart City"
     },
     {
-      id: 3,
+      id: 6,
       title: "Fault Detection System",
       description: "Automated fault detection system for street lights that identifies issues automatically and sends alert notifications to control rooms, significantly reducing manual fault detection time.",
       features: [
@@ -46,7 +87,7 @@ export default function Project() {
       category: "IoT"
     },
     {
-      id: 4,
+      id: 7,
       title: "Task Manager",
       description: "A comprehensive task management application that allows users to add, edit, and remove tasks efficiently with an intuitive user interface.",
       features: [
@@ -59,7 +100,7 @@ export default function Project() {
       category: "Web App"
     },
     {
-      id: 5,
+      id: 8,
       title: "Students Mark Portal",
       description: "A web application for managing student marks and maintaining a comprehensive database for educational institutions.",
       features: [
@@ -72,7 +113,7 @@ export default function Project() {
       category: "Web App"
     },
     {
-      id: 6,
+      id: 9,
       title: "Expense Tracker",
       description: "An innovative financial management tool designed to help users efficiently monitor and manage their personal and business expenses with intuitive categorization and tracking features.",
       features: [
@@ -139,7 +180,9 @@ export default function Project() {
               <div className="mt-auto px-6 pb-6">
                 <div className="grid grid-cols-2 gap-3">
                   <a
-                    href="#"
+                    href={project.liveUrl || '#'}
+                    target={project.liveUrl ? '_blank' : undefined}
+                    rel={project.liveUrl ? 'noopener noreferrer' : undefined}
                     className="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold rounded-lg border border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100 transition"
                   >
                     <FontAwesomeIcon icon={faExternalLinkAlt} className="h-4 w-4" />

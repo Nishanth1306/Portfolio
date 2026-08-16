@@ -35,7 +35,7 @@ export default function About() {
 
             // Animate each stat
             animateValue(0, 5, 1000, 'technologies');
-            animateValue(0, 6, 1200, 'projects');
+            animateValue(0, 9, 1200, 'projects');
             animateValue(0, 3, 800, 'awards');
             animateValue(0, 100, 1500, 'dedication');
           }
