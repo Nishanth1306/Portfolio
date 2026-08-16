@@ -68,6 +68,32 @@ export const featuredProjects = [
 
 export const personalProjects = [
   {
+    id: 10,
+    title: 'PDF reader (Q&A)',
+    description:
+      'Personal app: upload a PDF, chunk and embed the text, then chat against it. FastAPI backend with Next.js UI.',
+    features: [
+      'PDF upload and text extraction',
+      'Embeddings stored in ChromaDB per session',
+      'LangChain + OpenAI answers grounded in the document',
+    ],
+    technologies: ['Next.js', 'FastAPI', 'LangChain', 'ChromaDB', 'OpenAI', 'PyPDF2'],
+    category: 'Personal',
+  },
+  {
+    id: 11,
+    title: 'House price prediction',
+    description:
+      'Personal ML service: Random Forest trained on house features (area, rooms, parking, age), served over a FastAPI /predict endpoint.',
+    features: [
+      'Train/test split and MAE/RMSE evaluation',
+      'Model persisted with joblib',
+      'Typed request schema and CORS-ready API',
+    ],
+    technologies: ['Python', 'scikit-learn', 'FastAPI', 'pandas'],
+    category: 'Personal',
+  },
+  {
     id: 8,
     title: 'Event management application',
     description:
