@@ -9,7 +9,9 @@ export default function Home() {
             <div className="relative mb-8">
               <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 blur-2xl opacity-30"></div>
               <img
-                src="/profile.webp"
+                src="/profile-320.webp"
+                srcSet="/profile-320.webp 320w, /profile.webp 416w"
+                sizes="(max-width: 767px) 160px, 208px"
                 alt="Nishanth.K"
                 width={208}
                 height={208}
