@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
+  { href: '#projects', label: 'Work' },
   { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#awards', label: 'Awards' },
+  { href: '#awards', label: 'Leadership' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -73,12 +73,12 @@ const Header = () => {
             ))}
             <li>
               <a
-                href="https://www.linkedin.com/in/nishanth--k/"
+                href="/Nishanth.K.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-lg bg-gradient-to-r from-indigo-600 to-pink-600 text-white px-4 py-2 font-semibold shadow hover:shadow-lg transition-transform hover:-translate-y-0.5"
               >
-                LinkedIn
+                Resume
               </a>
             </li>
           </ul>
@@ -128,13 +128,13 @@ const Header = () => {
           ))}
           <li className="pt-1">
             <a
-              href="https://www.linkedin.com/in/nishanth--k/"
+              href="/Nishanth.K.pdf"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
               className="flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-600 to-pink-600 text-white px-4 py-3 font-semibold shadow"
             >
-              LinkedIn
+              Resume
             </a>
           </li>
         </ul>

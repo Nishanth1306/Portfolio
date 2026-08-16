@@ -43,7 +43,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: siteConfig.name,
-  jobTitle: 'Software Developer',
+  jobTitle: 'Software Engineer',
   url: siteConfig.url,
   email: siteConfig.email,
   image: `${siteConfig.url}/profile.webp`,

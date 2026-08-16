@@ -2,131 +2,112 @@
 
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Send, User, MessageSquare, ArrowRight } from './icons';
+import { profile } from '@/data/profile';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactInfo = [
     {
       icon: Mail,
-      label: "Email",
-      value: "nishanthkumar1363@gmail.com",
-      link: "mailto:nishanthkumar1363@gmail.com",
-      type: "email",
-      color: "from-blue-500 to-purple-600"
+      label: 'Email',
+      value: profile.email,
+      link: `mailto:${profile.email}`,
+      type: 'email',
+      color: 'from-blue-500 to-purple-600',
     },
     {
       icon: Phone,
-      label: "Phone",
-      value: "(+91) 9342559603",
-      link: "tel:+919342559603",
-      type: "phone",
-      color: "from-green-500 to-emerald-600"
+      label: 'Phone',
+      value: profile.phone,
+      link: profile.phoneHref,
+      type: 'phone',
+      color: 'from-green-500 to-emerald-600',
     },
     {
       icon: Linkedin,
-      label: "LinkedIn",
-      value: "Nishanth K",
-      link: "https://www.linkedin.com/in/nishanth--k/",
-      type: "social",
-      color: "from-blue-600 to-indigo-700"
+      label: 'LinkedIn',
+      value: 'Nishanth K',
+      link: profile.linkedin,
+      type: 'social',
+      color: 'from-blue-600 to-indigo-700',
     },
     {
       icon: MapPin,
-      label: "Location",
-      value: "Coimbatore, Tamil Nadu, India",
+      label: 'Location',
+      value: profile.location,
       link: null,
-      type: "location",
-      color: "from-orange-500 to-red-600"
-    }
+      type: 'location',
+      color: 'from-orange-500 to-red-600',
+    },
   ];
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      // Reset form or show success message
-      alert('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 2000);
+    const subject = encodeURIComponent(formData.subject || `Role discussion — ${formData.name || 'Hiring'}`);
+    const body = encodeURIComponent(
+      `${formData.message}\n\n— ${formData.name}\n${formData.email}`
+    );
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-slate-100 py-20 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }}></div>
-      
-      {/* Floating Elements */}
-      <div className="absolute top-10 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-      <div className="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-      <div className="absolute -bottom-32 left-40 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
-
+    <section id="contact" className="bg-gradient-to-br from-white via-slate-50 to-slate-100 py-20 px-4 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl relative z-10">
-        {/* Header */}
         <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl mb-6 animate-bounce shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl mb-6 shadow-lg">
             <MessageSquare className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
-            Get In Touch
+            Contact
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Let's connect and discuss how we can work together to bring your ideas to life
+            For roles and project discussions: email or LinkedIn. The form opens your mail client with a draft — nothing is faked as “sent”.
           </p>
         </div>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Info */}
           <div className="space-y-8">
             <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-200 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
                 <User className="w-6 h-6 text-purple-600" />
-                Contact Information
+                Direct lines
               </h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects, 
-                and innovative ideas. Feel free to reach out through any of these channels!
+                Recruiters: start with LinkedIn or a short email. I typically reply with availability and a resume.
               </p>
-              
               <div className="grid gap-4">
-                {contactInfo.map((info, index) => {
+                {contactInfo.map((info) => {
                   const IconComponent = info.icon;
                   return (
-                    <div 
-                      key={index} 
-                      className="group relative overflow-hidden bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300 transform hover:scale-[1.02]"
+                    <div
+                      key={info.label}
+                      className="group relative overflow-hidden bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300"
                     >
                       <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${info.color} flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-300`}>
+                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${info.color} flex items-center justify-center shadow-md`}>
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
                         <div className="flex-1">
-                          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-                            {info.label}
-                          </h4>
+                          <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wide">{info.label}</h4>
                           {info.link ? (
-                            <a 
-                              href={info.link} 
-                              className="text-gray-900 font-medium hover:text-purple-600 transition-colors duration-200 flex items-center gap-2 group-hover:gap-3"
-                              target={info.type === "social" ? "_blank" : undefined}
-                              rel={info.type === "social" ? "noopener noreferrer" : undefined}
+                            <a
+                              href={info.link}
+                              className="text-gray-900 font-medium hover:text-purple-600 transition-colors duration-200 flex items-center gap-2"
+                              target={info.type === 'social' ? '_blank' : undefined}
+                              rel={info.type === 'social' ? 'noopener noreferrer' : undefined}
                             >
                               {info.value}
                               <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -141,124 +122,90 @@ const Contact = () => {
                 })}
               </div>
             </div>
-            
-            {/* Quick Actions */}
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 backdrop-blur-xl rounded-3xl p-8 border border-purple-100 shadow-xl">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Let's Work Together</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Ready to start a conversation? Choose your preferred way to connect.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a 
-                  href="mailto:nishanthkumar1363@gmail.com" 
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-                >
-                  <Mail className="w-4 h-4" />
-                  Send Email
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/nishanth--k/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-white text-gray-900 px-6 py-3 rounded-xl font-medium border border-gray-200 hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-                >
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
-                </a>
-              </div>
-            </div>
           </div>
-          
-          {/* Contact Form */}
-          <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-200 shadow-xl">
+
+          <form
+            onSubmit={handleSubmit}
+            className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-200 shadow-xl"
+          >
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-3">
                 <Send className="w-6 h-6 text-purple-600" />
-                Send a Message
+                Draft an email
               </h3>
-              <p className="text-gray-600">
-                Have a project in mind? Let's discuss it in detail!
-              </p>
+              <p className="text-gray-600">Opens mailto with your note. Attach the role spec if you have one.</p>
             </div>
-            
             <div className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                  <label htmlFor="name" className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                     Name
                   </label>
-                  <input 
-                    type="text" 
-                    name="name" 
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200" 
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                     placeholder="Your name"
                   />
                 </div>
-                
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                  <label htmlFor="email" className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                     Email
                   </label>
-                  <input 
-                    type="email" 
-                    name="email" 
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200" 
-                    placeholder="your.email@example.com"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    placeholder="you@company.com"
                   />
                 </div>
               </div>
-              
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                <label htmlFor="subject" className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                   Subject
                 </label>
-                <input 
-                  type="text" 
-                  name="subject" 
+                <input
+                  id="subject"
+                  type="text"
+                  name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200" 
-                  placeholder="What's this about?"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  placeholder="Software Engineer role — [Company]"
                 />
               </div>
-              
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                <label htmlFor="message" className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                   Message
                 </label>
-                <textarea 
-                  name="message" 
+                <textarea
+                  id="message"
+                  name="message"
+                  required
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none" 
-                  placeholder="Tell me about your project or idea..."
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                  placeholder="Role, team, location, and timeline."
                   rows="5"
                 />
               </div>
-              
-              <button 
-                onClick={handleSubmit}
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-medium hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:transform-none flex items-center justify-center gap-2"
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </>
-                )}
+                <Send className="w-4 h-4" />
+                Open email draft
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nishanth1306.github.io/Portfolio';
 
-const title = "K.Nishanth's Portfolio | Software Developer";
+const title = 'Nishanth K | Software Engineer — Next.js, FastAPI, SEO platforms';
 const description =
-  'Portfolio of Nishanth K, a software developer skilled in Java, Python, and MERN. Explore FYERS SEO platforms, IoT projects, and contact details.';
+  'Software engineer who ships production SEO frontends, content CMS workflows, and FastAPI backends. Work includes FYERS financial pages and Hala Mobility APIs. Based in Coimbatore. Open to engineering roles.';
 
 export const siteConfig = {
   name: 'Nishanth K',
