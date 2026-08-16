@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+'use client';
+
+import { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Send, User, MessageSquare, ArrowRight } from './icons';
 
 const Contact = () => {

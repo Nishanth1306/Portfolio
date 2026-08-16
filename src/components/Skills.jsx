@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import javaLogo from '../assets/java.webp';
 import pythonLogo from '../assets/python.webp';
 import mernLogo from '../assets/mern.webp';
@@ -36,7 +37,7 @@ export default function Skills() {
               <div className="p-6">
                 <div className="w-16 h-16 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center mb-4">
                   {skill.logo ? (
-                    <img src={skill.logo} alt={skill.name} width={36} height={36} loading="lazy" decoding="async" className="h-9 w-9 object-contain" />
+                    <Image src={skill.logo} alt={skill.name} width={36} height={36} className="h-9 w-9 object-contain" />
                   ) : (
                     <span className={`font-bold text-gray-800 ${skill.text.length > 8 ? 'text-[10px] px-1 text-center leading-tight' : 'text-sm'}`}>{skill.text}</span>
                   )}
