@@ -50,7 +50,7 @@ export default function Project() {
             Selected work
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Production systems first. Client code is private, so this is the scope I owned — not placeholder CRUD apps.
+            Client projects first (FYERS and Hala Mobility). Source is private, so this is the scope I owned — not placeholder CRUD apps.
           </p>
         </div>
 

@@ -2,7 +2,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://nishanth1306.github
 
 const title = 'Nishanth K | Software Engineer — Next.js, FastAPI, SEO platforms';
 const description =
-  'Software engineer who ships production SEO frontends, content CMS workflows, and FastAPI backends. Work includes FYERS financial pages and Hala Mobility APIs. Based in Coimbatore. Open to engineering roles.';
+  'Software engineer. Client projects include FYERS SEO frontends, CMS, and FastAPI services, plus Hala Mobility APIs. Based in Coimbatore. Open to engineering roles.';
 
 export const siteConfig = {
   name: 'Nishanth K',

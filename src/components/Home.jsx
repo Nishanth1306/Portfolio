@@ -27,7 +27,7 @@ export default function Home() {
               {profile.name}
             </h1>
             <p className="mt-3 text-xl md:text-2xl text-gray-800 font-semibold">
-              {profile.headline} — production SEO platforms and APIs
+              {profile.headline} — client work on SEO platforms and APIs
             </p>
             <p className="mt-4 max-w-2xl text-gray-600 leading-relaxed">
               {profile.summary}

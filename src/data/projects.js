@@ -2,10 +2,10 @@ export const featuredProjects = [
   {
     id: 1,
     title: 'FYERS public SEO stock pages',
-    org: 'FYERS',
+    org: 'Client · FYERS',
     role: 'Frontend',
     description:
-      'Client project: server-rendered Next.js site for high-traffic equity research. Users can review overview, fundamentals, and corporate actions with crawlable metadata and interactive charts.',
+      'Server-rendered Next.js site for high-traffic equity research. Users can review overview, fundamentals, and corporate actions with crawlable metadata and interactive charts.',
     features: [
       'Stock templates for overview, P&L, balance sheet, dividends, bonus, and results',
       'Dynamic metadata, Open Graph, and XML sitemaps for indexing',
@@ -13,15 +13,15 @@ export const featuredProjects = [
       'Site chrome, auth entry points, and analytics via GTM and CleverTap',
     ],
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Chart.js', 'Recharts', 'Axios'],
-    category: 'Production',
+    category: 'Client project',
   },
   {
     id: 2,
     title: 'FYERS SEO content CMS',
-    org: 'FYERS',
+    org: 'Client · FYERS',
     role: 'Frontend',
     description:
-      'Client project: React and TypeScript dashboard used by marketing and SEO teams to draft, approve, and publish finance content, including AI generation and live SEO monitoring.',
+      'React and TypeScript dashboard used by the client’s marketing and SEO teams to draft, approve, and publish finance content, including AI generation and live SEO monitoring.',
     features: [
       'Content and FAQ workflows with approval states',
       'AI generation, sync, and prompt configuration UI',
@@ -29,15 +29,15 @@ export const featuredProjects = [
       'Interlinking, clusters, and role-based admin',
     ],
     technologies: ['React', 'TypeScript', 'Vite', 'Redux Toolkit', 'TanStack Query', 'Tailwind CSS'],
-    category: 'Production',
+    category: 'Client project',
   },
   {
     id: 3,
     title: 'FYERS SEO operations API',
-    org: 'FYERS',
-    role: 'Backend · Client project',
+    org: 'Client · FYERS',
+    role: 'Backend',
     description:
-      'Client project: FastAPI platform behind FYERS SEO operations — AI-assisted content, sitemap compilation, Lighthouse monitoring, JWT auth, and background jobs on MongoDB, Redis, and Celery.',
+      'FastAPI platform behind the client’s SEO operations: AI-assisted content, sitemap compilation, Lighthouse monitoring, JWT auth, and background jobs on MongoDB, Redis, and Celery.',
     features: [
       'JWT authentication with role-based access',
       'Content and FAQ generation via OpenAI and Anthropic',
@@ -46,15 +46,15 @@ export const featuredProjects = [
       'Interlinking APIs and Celery scheduled workers',
     ],
     technologies: ['FastAPI', 'Python', 'MongoDB', 'Redis', 'Celery', 'OpenAI'],
-    category: 'Production',
+    category: 'Client project',
   },
   {
     id: 4,
     title: 'Hala Mobility growth & payouts',
-    org: 'Hala Mobility',
-    role: 'Backend · Client project',
+    org: 'Client · Hala Mobility',
+    role: 'Backend',
     description:
-      'Client project: API work for promotions, acquisition, and payouts. Built validated request/response flows and failure paths for features that affect discounts and money movement.',
+      'API work for the client’s promotions, acquisition, and payouts. Built validated request/response flows and failure paths for features that affect discounts and money movement.',
     features: [
       'Coupon eligibility and discount application',
       'Referral validation, rewards, and duplicate handling',
@@ -62,9 +62,10 @@ export const featuredProjects = [
       'Payout status tracking and exception handling',
     ],
     technologies: ['REST APIs', 'Hubble', 'Payments', 'Business validations'],
-    category: 'Production',
+    category: 'Client project',
   },
 ];
+
 
 export const additionalProjects = [
   {

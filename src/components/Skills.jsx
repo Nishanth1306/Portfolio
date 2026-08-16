@@ -7,7 +7,7 @@ export default function Skills() {
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Skills used in shipped work</h2>
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-            Stack from production SEO platforms and mobility APIs — not a generic tutorial list.
+            Stack from client projects (FYERS SEO platforms and Hala Mobility APIs) — not a generic tutorial list.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -21,11 +21,11 @@ export default function About() {
                 I am {profile.name}, a software engineer based in {profile.location}. I trained in Electrical and Electronics
                 Engineering at Karpagam Institute of Technology and now spend my time shipping web platforms:
                 crawlable Next.js pages, internal tools for content teams, and FastAPI services with auth, jobs, and monitoring.
+                FYERS and Hala Mobility are client projects, not employers.
               </p>
               <p className="mt-4 text-slate-600 text-lg leading-relaxed">
-                Hiring managers usually care whether someone has touched real users and real constraints. The FYERS work is
-                SEO, metadata, sitemaps, and publishing workflows. The Hala work is eligibility, referrals, and payouts — places
-                where a wrong response is a business incident, not a UI glitch.
+                On the FYERS engagement I worked on SEO, metadata, sitemaps, and publishing workflows. On the Hala Mobility
+                engagement I worked on eligibility, referrals, and payouts — places where a wrong response is a business incident, not a UI glitch.
               </p>
             </div>
 
@@ -53,11 +53,11 @@ export default function About() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-blue-50 rounded-xl">
                   <div className="text-2xl font-bold text-blue-600">2</div>
-                  <div className="text-sm text-slate-600 font-medium">Product platforms</div>
+                  <div className="text-sm text-slate-600 font-medium">Client companies</div>
                 </div>
                 <div className="text-center p-4 bg-green-50 rounded-xl">
                   <div className="text-2xl font-bold text-green-600">4</div>
-                  <div className="text-sm text-slate-600 font-medium">Production workstreams</div>
+                  <div className="text-sm text-slate-600 font-medium">Client workstreams</div>
                 </div>
                 <div className="text-center p-4 bg-purple-50 rounded-xl">
                   <div className="text-2xl font-bold text-purple-600">SEO</div>
@@ -73,7 +73,7 @@ export default function About() {
         </div>
 
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20">
-          <h3 className="text-2xl font-bold text-slate-800 mb-8">Experience</h3>
+          <h3 className="text-2xl font-bold text-slate-800 mb-8">Client work and background</h3>
           <div className="relative">
             <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
             <div className="space-y-8">
