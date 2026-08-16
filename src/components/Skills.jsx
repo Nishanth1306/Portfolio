@@ -9,10 +9,12 @@ const skills = [
   { logo: pythonLogo, name: 'Python', desc: 'Data science, automation, and web development' },
   { logo: mernLogo, name: 'MERN Stack', desc: 'Full-stack web development with modern technologies' },
   { logo: sqlLogo, name: 'SQL', desc: 'Database design and management' },
+  { logo: null, name: 'PostgreSQL', desc: 'Relational database design, queries, and data modeling', text: 'PostgreSQL' },
   { logo: null, name: 'Go', desc: 'High-performance systems and microservices development', text: 'Go' },
   { logo: null, name: 'FastAPI', desc: 'Modern, fast web APIs with automatic documentation', text: 'FastAPI' },
   { logo: null, name: 'DevOps', desc: 'CI/CD pipelines, containerization, and cloud deployment', text: 'DevOps' },
   { logo: null, name: 'Selenium', desc: 'Web automation and testing frameworks', text: 'Selenium' },
+  { logo: null, name: 'Playwright', desc: 'Reliable end-to-end testing and browser automation', text: 'Playwright' },
   { logo: leadershipLogo, name: 'Leadership', desc: 'Team management and project coordination' },
 ];
 
@@ -36,7 +38,7 @@ export default function Skills() {
                   {skill.logo ? (
                     <img src={skill.logo} alt={skill.name} width={36} height={36} loading="lazy" decoding="async" className="h-9 w-9 object-contain" />
                   ) : (
-                    <span className="text-sm font-bold text-gray-800">{skill.text}</span>
+                    <span className={`font-bold text-gray-800 ${skill.text.length > 8 ? 'text-[10px] px-1 text-center leading-tight' : 'text-sm'}`}>{skill.text}</span>
                   )}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">{skill.name}</h3>

@@ -3,7 +3,19 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    {
+      name: 'async-css',
+      transformIndexHtml(html) {
+        return html.replace(
+          /<link rel="stylesheet"( crossorigin)? href="([^"]+)">/g,
+          '<link rel="preload" as="style" href="$2" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="$2"></noscript>'
+        );
+      },
+    },
+  ],
   build: {
     minify: 'esbuild',
     cssMinify: true,

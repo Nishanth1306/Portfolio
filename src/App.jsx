@@ -1,11 +1,11 @@
-import React, { lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
+import LazyOnVisible from './components/LazyOnVisible';
 
-const Project = lazy(() => import('./components/project'));
-const About = lazy(() => import('./components/About'));
-const Awards = lazy(() => import('./components/Awards'));
-const Contact = lazy(() => import('./components/Contact'));
+const loadProject = () => import('./components/project');
+const loadAbout = () => import('./components/About');
+const loadAwards = () => import('./components/Awards');
+const loadContact = () => import('./components/Contact');
 
 const App = () => {
   return (
@@ -13,12 +13,10 @@ const App = () => {
       <Header />
       <main>
         <Home />
-        <Suspense fallback={null}>
-          <Project />
-          <About />
-          <Awards />
-          <Contact />
-        </Suspense>
+        <LazyOnVisible id="projects" loader={loadProject} />
+        <LazyOnVisible id="about" loader={loadAbout} />
+        <LazyOnVisible id="awards" loader={loadAwards} />
+        <LazyOnVisible id="contact" loader={loadContact} />
       </main>
     </div>
   );
