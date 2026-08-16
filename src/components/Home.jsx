@@ -4,11 +4,10 @@ import Skills from './Skills';
 export default function Home() {
   return (
     <div>
-      <section id="home" className="relative overflow-hidden bg-gradient-to-br from-white via-slate-50 to-slate-100 py-24">
+      <section id="home" className="relative bg-white py-24 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="flex flex-col items-center text-center">
             <div className="relative mb-8">
-              <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 blur-2xl opacity-30"></div>
               <img
                 src="/profile-320.webp"
                 srcSet="/profile-320.webp 320w, /profile.webp 416w"
@@ -35,12 +34,15 @@ export default function Home() {
             <p className="mt-4 max-w-2xl text-gray-600 leading-relaxed">
               {profile.summary}
             </p>
+            <p className="mt-3 text-sm text-slate-500">
+              {profile.workMode} · {profile.notice}
+            </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
                 href={profile.resumeHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-pink-600 text-white font-semibold shadow hover:shadow-lg transition transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-indigo-700 text-white font-semibold hover:bg-indigo-800 transition"
               >
                 Download resume
               </a>

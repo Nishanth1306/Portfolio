@@ -19,7 +19,7 @@ const Contact = () => {
       value: profile.email,
       link: `mailto:${profile.email}`,
       type: 'email',
-      color: 'from-blue-500 to-purple-600',
+      color: 'bg-indigo-700',
     },
     {
       icon: Phone,
@@ -27,7 +27,7 @@ const Contact = () => {
       value: profile.phone,
       link: profile.phoneHref,
       type: 'phone',
-      color: 'from-green-500 to-emerald-600',
+      color: 'bg-indigo-700',
     },
     {
       icon: Linkedin,
@@ -35,7 +35,7 @@ const Contact = () => {
       value: 'Nishanth K',
       link: profile.linkedin,
       type: 'social',
-      color: 'from-blue-600 to-indigo-700',
+      color: 'bg-indigo-700',
     },
     {
       icon: MapPin,
@@ -43,7 +43,7 @@ const Contact = () => {
       value: profile.location,
       link: null,
       type: 'location',
-      color: 'from-orange-500 to-red-600',
+      color: 'bg-indigo-700',
     },
   ];
 
@@ -64,13 +64,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-gradient-to-br from-white via-slate-50 to-slate-100 py-20 px-4 relative overflow-hidden">
+    <section id="contact" className="bg-slate-50 py-20 px-4">
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl mb-6 shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-700 rounded-2xl mb-6">
             <MessageSquare className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
             Contact
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -82,11 +82,11 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 border border-gray-200 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3">
-                <User className="w-6 h-6 text-purple-600" />
+                <User className="w-6 h-6 text-indigo-700" />
                 Direct lines
               </h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Recruiters: start with LinkedIn or a short email. I typically reply with availability and a resume.
+                Recruiters: LinkedIn or email. Include role, location, and timeline. Notice period on request.
               </p>
               <div className="grid gap-4">
                 {contactInfo.map((info) => {
@@ -97,7 +97,7 @@ const Contact = () => {
                       className="group relative overflow-hidden bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300"
                     >
                       <div className="flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${info.color} flex items-center justify-center shadow-md`}>
+                        <div className={`w-12 h-12 rounded-xl ${info.color} flex items-center justify-center`}>
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
                         <div className="flex-1">
@@ -105,7 +105,7 @@ const Contact = () => {
                           {info.link ? (
                             <a
                               href={info.link}
-                              className="text-gray-900 font-medium hover:text-purple-600 transition-colors duration-200 flex items-center gap-2"
+                              className="text-gray-900 font-medium hover:text-indigo-700 transition-colors duration-200 flex items-center gap-2"
                               target={info.type === 'social' ? '_blank' : undefined}
                               rel={info.type === 'social' ? 'noopener noreferrer' : undefined}
                             >
@@ -130,7 +130,7 @@ const Contact = () => {
           >
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-3">
-                <Send className="w-6 h-6 text-purple-600" />
+                <Send className="w-6 h-6 text-indigo-700" />
                 Draft an email
               </h3>
               <p className="text-gray-600">Opens mailto with your note. Attach the role spec if you have one.</p>
@@ -148,7 +148,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                     placeholder="Your name"
                   />
                 </div>
@@ -163,7 +163,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                     placeholder="you@company.com"
                   />
                 </div>
@@ -178,7 +178,7 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-600"
                   placeholder="Software Engineer role — [Company]"
                 />
               </div>
@@ -192,14 +192,14 @@ const Contact = () => {
                   required
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 resize-none"
                   placeholder="Role, team, location, and timeline."
                   rows="5"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-medium hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-indigo-700 text-white px-8 py-4 rounded-xl font-medium hover:bg-indigo-800 transition flex items-center justify-center gap-2"
               >
                 <Send className="w-4 h-4" />
                 Open email draft

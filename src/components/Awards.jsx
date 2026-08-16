@@ -36,10 +36,10 @@ export default function Awards() {
   ];
 
   return (
-    <section id="awards" className="py-20 px-4 bg-gradient-to-br from-white via-slate-50 to-slate-100">
+    <section id="awards" className="py-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
             Leadership
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">

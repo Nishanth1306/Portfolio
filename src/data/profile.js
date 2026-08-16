@@ -2,7 +2,8 @@ export const profile = {
   name: 'Nishanth K',
   headline: 'Software Engineer',
   employer: 'Codingmart Technologies',
-  location: 'Sathyamangalam, Tamil Nadu, India',
+  location: 'Bangalore, Chennai, Mumbai, Pune, Noida',
+  workMode: 'Hybrid / remote — Bangalore, Chennai, Mumbai, Pune, Noida',
   email: 'nishanthkumar1363@gmail.com',
   phone: '+91 93425 59603',
   phoneHref: 'tel:+919342559603',
@@ -11,6 +12,7 @@ export const profile = {
   github: 'https://github.com/Nishanth1306',
   leetcode: 'https://leetcode.com/u/21eea29/',
   gfg: 'https://www.geeksforgeeks.org/user/21eea29/',
+  notice: 'Notice period shared on request',
   summary:
     'Software Engineer at Codingmart Technologies. Building and shipping software since 2023 — React, React Native, Next.js, Node.js, FastAPI, Go, Docker, Nginx, and AWS. Client work includes FYERS SEO platforms and Hala Mobility APIs. Personal work includes a PDF Q&A app (RAG) and a house-price prediction API.',
   availability: 'Open to software engineering roles',
@@ -20,9 +22,9 @@ export const experience = [
   {
     title: 'Software Engineer',
     org: 'Codingmart Technologies',
-    dates: 'Dec 2024 – Present',
+    dates: '2023 – Present',
     detail:
-      'Employer. Building and operating client products across frontend, APIs, and deployment. FYERS and Hala Mobility are client projects delivered here — not employers.',
+      'Employer. I own frontend, APIs, and deploy work on client products. FYERS and Hala Mobility are clients of Codingmart — not my employers.',
   },
   {
     title: 'Client project — FYERS SEO & content platforms',
@@ -36,14 +38,14 @@ export const experience = [
     org: 'Codingmart · Client: Hala Mobility',
     dates: 'During Codingmart tenure',
     detail:
-      'Coupon, referral, payout, and Hubble integration APIs with eligibility checks, duplicate protection, and explicit failure handling.',
+      'Stakeholders: growth and payments. Owned coupon, referral, and payout API paths with eligibility checks, duplicate protection, and Hubble failure handling.',
   },
   {
     title: 'Software Engineer',
     org: 'Finest Coder',
     dates: 'Dec 2024 – Sep 2025 · R.S. Puram, Coimbatore',
     detail:
-      'Hands-on full-stack delivery on real-world training and product work: frontend, backend, and automation-oriented engineering.',
+      'Training and delivery at Finest Coder (Dec 2024–Sep 2025) during my Codingmart tenure, then continued as Software Engineer at Codingmart.',
   },
   {
     title: 'Front-End Developer Intern',

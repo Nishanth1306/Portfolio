@@ -18,15 +18,15 @@ function ProjectCard({ project }) {
         <h3 className="text-xl font-bold text-gray-900 leading-snug">{project.title}</h3>
         <p className="mt-3 text-gray-600 text-sm leading-relaxed">{project.description}</p>
         <div className="mt-5">
-          <h4 className="text-sm font-semibold text-gray-700 mb-2">What I delivered</h4>
+          <h4 className="text-sm font-semibold text-gray-700 mb-2">Scope</h4>
           <ul className="space-y-1.5 list-disc list-inside text-gray-600 text-sm">
-            {project.features.map((feature) => (
+            {(project.features || []).map((feature) => (
               <li key={feature}>{feature}</li>
             ))}
           </ul>
         </div>
         <div className="mt-5 flex flex-wrap gap-2">
-          {project.technologies.map((tech) => (
+          {(project.technologies || []).map((tech) => (
             <span
               key={tech}
               className="inline-flex items-center px-2.5 py-1 text-xs font-semibold rounded-full bg-slate-100 text-slate-700 border border-slate-200"
@@ -35,18 +35,28 @@ function ProjectCard({ project }) {
             </span>
           ))}
         </div>
+        {project.githubUrl && (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex text-sm font-semibold text-indigo-700 hover:text-indigo-900"
+          >
+            GitHub
+          </a>
+        )}
       </div>
-      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition" />
+      <div className="absolute inset-x-0 top-0 h-1 bg-indigo-700 opacity-0 group-hover:opacity-100 transition" />
     </article>
   );
 }
 
 export default function Project() {
   return (
-    <section id="projects" className="py-20 px-4 bg-gradient-to-br from-white via-slate-50 to-slate-100">
+    <section id="projects" className="py-20 px-4 bg-slate-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
             Selected work
           </h2>
           <p className="mt-4 text-gray-600 max-w-2xl mx-auto">

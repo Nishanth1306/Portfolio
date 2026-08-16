@@ -35,7 +35,7 @@ export const metadata = {
     images: ['/profile.webp'],
   },
   icons: {
-    icon: '/vite.svg',
+    icon: '/profile-320.webp',
   },
 };
 
@@ -54,8 +54,8 @@ const jsonLd = {
   },
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Sathyamangalam',
-    addressRegion: 'Tamil Nadu',
+    addressLocality: 'Bengaluru',
+    addressRegion: 'Karnataka',
     addressCountry: 'IN',
   },
   url: siteConfig.url,
