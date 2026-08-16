@@ -1,38 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
-import Contact from './components/Contact';
-import About from './components/About';
-import Project from './components/project';
-import Awards from './components/Awards';
-import { initScrollAnimations, addScrollListener } from './utils/animations';
 
-import './App.css';
+const Project = lazy(() => import('./components/project'));
+const About = lazy(() => import('./components/About'));
+const Awards = lazy(() => import('./components/Awards'));
+const Contact = lazy(() => import('./components/Contact'));
 
 const App = () => {
-  useEffect(() => {
-    // Initialize scroll animations
-    const observer = initScrollAnimations();
-    
-    // Add scroll listener for header
-    const cleanupScroll = addScrollListener();
-
-    // Cleanup function
-    return () => {
-      observer.disconnect();
-      cleanupScroll();
-    };
-  }, []);
-
   return (
     <div className="app">
       <Header />
       <main>
         <Home />
-        <Project />
-        <About />
-        <Awards />
-        <Contact />
+        <Suspense fallback={null}>
+          <Project />
+          <About />
+          <Awards />
+          <Contact />
+        </Suspense>
       </main>
     </div>
   );
