@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+const skills = [
+  { name: 'Java', level: 85, color: 'bg-orange-500' },
+  { name: 'Python', level: 80, color: 'bg-blue-500' },
+  { name: 'MERN Stack', level: 75, color: 'bg-green-500' },
+  { name: 'SQL', level: 70, color: 'bg-purple-500' },
+  { name: 'Problem Solving', level: 90, color: 'bg-red-500' }
+];
+
 export default function About() {
   const [animatedStats, setAnimatedStats] = useState({
     technologies: 0,
@@ -35,7 +43,7 @@ export default function About() {
 
             // Animate each stat
             animateValue(0, 5, 1000, 'technologies');
-            animateValue(0, 6, 1200, 'projects');
+            animateValue(0, 10, 1200, 'projects');
             animateValue(0, 3, 800, 'awards');
             animateValue(0, 100, 1500, 'dedication');
           }
@@ -49,14 +57,6 @@ export default function About() {
 
     return () => observer.disconnect();
   }, []);
-
-  const skills = [
-    { name: 'Java', level: 85, color: 'bg-orange-500' },
-    { name: 'Python', level: 80, color: 'bg-blue-500' },
-    { name: 'MERN Stack', level: 75, color: 'bg-green-500' },
-    { name: 'SQL', level: 70, color: 'bg-purple-500' },
-    { name: 'Problem Solving', level: 90, color: 'bg-red-500' }
-  ];
 
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
@@ -174,7 +174,6 @@ export default function About() {
               </div>
             </div>
 
-     
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20">
               <h3 className="text-xl font-bold text-slate-800 mb-6">Technical Skills</h3>
               <div className="space-y-4">
@@ -185,9 +184,9 @@ export default function About() {
                       <span className="text-sm text-slate-500">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-slate-200 rounded-full h-2">
-                      <div 
-                        className={`h-2 rounded-full ${skill.color} transition-all duration-1000 delay-${index * 200}`}
-                        style={{ 
+                      <div
+                        className={`h-2 rounded-full ${skill.color} transition-all duration-1000`}
+                        style={{
                           width: isVisible ? `${skill.level}%` : '0%',
                           transitionDelay: `${index * 200}ms`
                         }}
@@ -197,23 +196,6 @@ export default function About() {
                 ))}
               </div>
             </div>
-
-            {/* Contact CTA */}
-            {/* <div className="bg-slate-800 rounded-2xl p-6 shadow-xl text-white">
-              <h3 className="text-xl font-bold mb-4">Let's Connect</h3>
-              <p className="text-slate-300 mb-6">
-                Ready to collaborate on exciting projects? Let's discuss how we can work together.
-              </p>
-              <a 
-                href="#contact" 
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg font-medium hover:from-blue-600 hover:to-purple-600 transition-all duration-200 hover:scale-105"
-              >
-                Get In Touch
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div> */}
           </div>
         </div>
 
