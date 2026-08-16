@@ -1,4 +1,6 @@
-import Skills from './Skills';
+import LazyOnVisible from './LazyOnVisible';
+
+const loadSkills = () => import('./Skills');
 
 export default function Home() {
   return (
@@ -90,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Skills />
+      <LazyOnVisible loader={loadSkills} />
     </div>
   );
 }

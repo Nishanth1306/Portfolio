@@ -39,7 +39,7 @@ export default function LazyOnVisible({ loader, id }) {
           observer.disconnect();
         }
       },
-      { rootMargin: '240px 0px' }
+      { rootMargin: '80px 0px' }
     );
     if (node) observer.observe(node);
 
@@ -60,5 +60,5 @@ export default function LazyOnVisible({ loader, id }) {
 
   if (Component) return <Component />;
 
-  return <div ref={placeholderRef} id={id} className="min-h-[40vh]" aria-hidden="true" />;
+  return <div ref={placeholderRef} id={id} />;
 }
