@@ -2,14 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faDownload, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import profilePicture from '../assets/profile.jpeg';
-import gfgLogo from '../assets/gfglogo.jpg';
-import leetcode from '../assets/leetcode.png';
-import javaLogo from '../assets/java.jpg';
-import pythonLogo from '../assets/python.png';
-import mernLogo from '../assets/mern.png';
-import sqlLogo from '../assets/sql.png';
-import leadershipLogo from '../assets/leadership.png';
+import profilePicture from '../assets/profile.webp';
+import gfgLogo from '../assets/gfglogo.webp';
+import leetcode from '../assets/leetcode.webp';
+import javaLogo from '../assets/java.webp';
+import pythonLogo from '../assets/python.webp';
+import mernLogo from '../assets/mern.webp';
+import sqlLogo from '../assets/sql.webp';
+import leadershipLogo from '../assets/leadership.webp';
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -68,7 +68,15 @@ const Home = () => {
           <div className="flex flex-col items-center text-center">
             <div className="relative mb-8">
               <div className="absolute -inset-6 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 blur-2xl opacity-30"></div>
-              <img src={profilePicture} alt="Nishanth.K" className="relative w-40 h-40 md:w-52 md:h-52 rounded-full ring-4 ring-white shadow-xl object-cover" />
+              <img
+                src={profilePicture}
+                alt="Nishanth.K"
+                width={208}
+                height={208}
+                fetchPriority="high"
+                decoding="async"
+                className="relative w-40 h-40 md:w-52 md:h-52 rounded-full ring-4 ring-white shadow-xl object-cover"
+              />
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
               Hi, I'm <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Nishanth.K</span>
@@ -97,16 +105,34 @@ const Home = () => {
             </div>
 
             <div className="mt-10">
-              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Connect with me</h3>
+              <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">Connect with me</p>
               <div className="flex items-center gap-4">
-                <a href="https://github.com/Nishanth1306" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center hover:shadow-md transition">
-                  <FontAwesomeIcon icon={faGithub} className="text-gray-800 h-5 w-5" />
+                <a
+                  href="https://github.com/Nishanth1306"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Nishanth on GitHub (opens in a new tab)"
+                  className="w-12 h-12 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center hover:shadow-md transition"
+                >
+                  <FontAwesomeIcon icon={faGithub} className="text-gray-800 h-5 w-5" aria-hidden="true" />
                 </a>
-                <a href="https://www.geeksforgeeks.org/user/21eea29/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center hover:shadow-md transition">
-                  <img src={gfgLogo} alt="Geeks for Geeks" className="h-5" />
+                <a
+                  href="https://www.geeksforgeeks.org/user/21eea29/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Nishanth on GeeksforGeeks (opens in a new tab)"
+                  className="w-12 h-12 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center hover:shadow-md transition"
+                >
+                  <img src={gfgLogo} alt="" width={20} height={14} className="h-5 w-auto" />
                 </a>
-                <a href="https://leetcode.com/u/21eea29/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center hover:shadow-md transition">
-                  <img src={leetcode} alt="LeetCode" className="h-5" />
+                <a
+                  href="https://leetcode.com/u/21eea29/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Nishanth on LeetCode (opens in a new tab)"
+                  className="w-12 h-12 rounded-full bg-white border border-gray-200 shadow flex items-center justify-center hover:shadow-md transition"
+                >
+                  <img src={leetcode} alt="" width={20} height={20} className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -146,7 +172,7 @@ const Home = () => {
                 <div className="p-6">
                   <div className="w-16 h-16 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center mb-4">
                     {skill.logo ? (
-                      <img src={skill.logo} alt={skill.name} className="h-9 object-contain" />
+                      <img src={skill.logo} alt={skill.name} width={36} height={36} loading="lazy" decoding="async" className="h-9 w-9 object-contain" />
                     ) : (
                       <span className="text-sm font-bold text-gray-800">{skill.text}</span>
                     )}

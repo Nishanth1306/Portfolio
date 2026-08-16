@@ -17,7 +17,7 @@ export default function Project() {
       ],
       technologies: ["Next.js", "React", "Tailwind CSS", "Chart.js", "Recharts", "Axios"],
       category: "Web App",
-      liveUrl: "https://fyers.in/stocks/"
+      hideLinks: true
     },
     {
       id: 2,
@@ -30,7 +30,8 @@ export default function Project() {
         "Interlinking, cluster management, and role-based admin"
       ],
       technologies: ["React", "TypeScript", "Vite", "Redux Toolkit", "TanStack Query", "Tailwind CSS"],
-      category: "CMS"
+      category: "CMS",
+      hideLinks: true
     },
     {
       id: 3,
@@ -44,7 +45,8 @@ export default function Project() {
         "Interlinking, master data APIs, and Celery cron workers"
       ],
       technologies: ["FastAPI", "Python", "MongoDB", "Redis", "Celery", "OpenAI"],
-      category: "Backend"
+      category: "Backend",
+      hideLinks: true
     },
     {
       id: 4,
@@ -177,26 +179,28 @@ export default function Project() {
                 </div>
               </div>
 
-              <div className="mt-auto px-6 pb-6">
-                <div className="grid grid-cols-2 gap-3">
-                  <a
-                    href={project.liveUrl || '#'}
-                    target={project.liveUrl ? '_blank' : undefined}
-                    rel={project.liveUrl ? 'noopener noreferrer' : undefined}
-                    className="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold rounded-lg border border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100 transition"
-                  >
-                    <FontAwesomeIcon icon={faExternalLinkAlt} className="h-4 w-4" />
-                    View Details
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold rounded-lg text-white bg-gradient-to-r from-indigo-600 to-pink-600 shadow hover:shadow-lg transition"
-                  >
-                    <FontAwesomeIcon icon={faGithub} className="h-4 w-4" />
-                    Source Code
-                  </a>
+              {!project.hideLinks && (
+                <div className="mt-auto px-6 pb-6">
+                  <div className="grid grid-cols-2 gap-3">
+                    <a
+                      href={project.liveUrl || '#'}
+                      target={project.liveUrl ? '_blank' : undefined}
+                      rel={project.liveUrl ? 'noopener noreferrer' : undefined}
+                      className="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold rounded-lg border border-indigo-200 text-indigo-700 bg-indigo-50 hover:bg-indigo-100 transition"
+                    >
+                      <FontAwesomeIcon icon={faExternalLinkAlt} className="h-4 w-4" />
+                      View Details
+                    </a>
+                    <a
+                      href="#"
+                      className="inline-flex items-center justify-center gap-2 px-3 py-2 text-sm font-semibold rounded-lg text-white bg-gradient-to-r from-indigo-600 to-pink-600 shadow hover:shadow-lg transition"
+                    >
+                      <FontAwesomeIcon icon={faGithub} className="h-4 w-4" />
+                      Source Code
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition" />
             </div>
