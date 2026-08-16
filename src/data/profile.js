@@ -12,7 +12,7 @@ export const profile = {
   leetcode: 'https://leetcode.com/u/21eea29/',
   gfg: 'https://www.geeksforgeeks.org/user/21eea29/',
   summary:
-    'Software Engineer at Codingmart Technologies with experience since 2023. I ship web and mobile-adjacent product work: React, React Native, Next.js, Node.js, FastAPI, Go, Docker, Nginx, and AWS. Client engagements include FYERS SEO platforms and Hala Mobility APIs.',
+    'Software Engineer at Codingmart Technologies. Building and shipping software since 2023 — React, React Native, Next.js, Node.js, FastAPI, Go, Docker, Nginx, and AWS. Client work includes FYERS SEO platforms and Hala Mobility APIs.',
   availability: 'Open to software engineering roles',
 };
 
